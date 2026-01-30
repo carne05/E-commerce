@@ -1,119 +1,257 @@
 body {
-    background-color: beige;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+background-color: beige;
+margin: 0;
+padding: 0;
+text-align: center;
 
-    border-bottom: 80px solid white;
-    min-height: 100vh;
-    box-sizing: border-box;
+border-bottom: 80px solid white;
+min-height: 100vh;
+box-sizing: border-box;
 }
 
 .header {
-    background: rgb(252, 253, 198);
-    padding: 6px 70px;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box; /*cite: google gemini*/
+background: rgb(254, 255, 216);
+padding: 6px 70px;
+margin: 0;
+width: 100%;
+box-sizing: border-box; /*cite: google gemini*/
 
-    color: rgb(40, 71, 38);
-    text-align: left;
-    position: relative;
+color: rgb(40, 71, 38);
+text-align: left;
+position: relative;
 }
 
 .shop {
-    font-size: 15px;
-    margin-left: 50px;
-    font-weight: medium;
-    vertical-align: middle;
-    text-decoration: none;
-    color: inherit; /*var tvungen att ta reda på hur man fick bort strecket och fick samma färg cite:google gemini*/
+font-size: 15px;
+margin-left: 50px;
+font-weight: medium;
+vertical-align: middle;
+text-decoration: none;
+color: inherit; /*var tvungen att ta reda på hur man fick bort strecket och fick samma färg cite:google gemini*/
 }
 
 .Gallery {
-    font-size: 15px;
-    margin-left: 20px;
-    font-weight: medium;
-    vertical-align: middle;
+font-size: 15px;
+margin-left: 20px;
+font-weight: medium;
+vertical-align: middle;
 }
 
 .member {
-    font-size: 15px;
-    margin-left: 100spx;
-    font-weight: medium;
-    vertical-align: middle;
+font-size: 15px;
+margin-left: 100spx;
+font-weight: medium;
+vertical-align: middle;
 }
 
-
 .cart {
-    position: absolute;
-    right: 30px;
-    top: 40%;
-    color:rgb(79, 123, 77);
-    text-decoration: none;
-    color: inherit;
+position: absolute;
+right: 30px;
+top: 40%;
+color:rgb(79, 123, 77);
+text-decoration: none;
+color: inherit;
 }
 
 .header-picture {
-    width: 50%;
-    float: left;
-    height: 900px;
-    object-fit: cover;
+width: 50%;
+float: left;
+height: 900px;
+object-fit: cover;
 }
 
 .bestseller-text {
-    clear: both;
-    text-align: center;
-    padding-top: 50px;  
-    color: rgb(13, 27, 12);
+clear: both;
+text-align: center;
+padding-top: 50px; 
+color: rgb(13, 27, 12);
 }
 
 .bestseller-picture {
-    display: inline-block;
-    width: 28%;
-    height: 400px;
-    object-fit: cover;
-    margin: 10px;
+display: inline-block;
+width: 28%;
+height: 400px;
+object-fit: cover;
+margin: 10px;
+clear: both;
 
-    transition: transform 0.3s ease, filter 0.3s ease; /*cite: google gemini*/
+transition: transform 0.3s ease, filter 0.3s ease; /*cite: google gemini*/
 }
 
 .bestseller-picture:hover {  /*cite: google gemini*/
-    transform: scale(1.05);
+transform: scale(1.05);
 }
 
 .bild-ner { /*cite: google gemini*/
-    object-position: center 0%;
+object-position: center 0%;
 }
 
-
 .about {
-    clear: both;
-    text-align: center;
-    margin-bottom: 5px;
-    padding-top: 50px;  
-    color: rgb(13, 27, 12);
+clear: both;
+text-align: center;
+margin-bottom: 5px;
+padding-top: 50px; 
+color: rgb(13, 27, 12);
 }
 
 .about-text {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-    color: rgb(13, 27, 12);
-    margin-bottom: 80px;
+text-align: center;
+max-width: 800px;
+margin: 0 auto;
+line-height: 1.6;
+color: rgb(13, 27, 12);
+margin-bottom: 80px;
 }
 
-.banner {
-     width: 49.99%;
-     float: left;
-    height: 600px !important;
+.member-frame {
+    position: relative;
+    width: 800px;
+    margin: 0 auto 50px;
+}
+
+.member-picture {
+    width: 100%;
+    height: 500px;
     object-fit: cover;
+    display: block;
+    object-position: 90% 0%;
+}
+
+.member-text {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+/*Shopall sidan*/
+.banner {
+width: 49.99%;
+float: left;
+height: 600px !important;
+object-fit: cover;
 }
 
 .shoptext {
+clear: both;
+color: rgb(12, 27, 12);
+font-size: 30px;
+text-align: center;
+padding-top: 30px;
+}
+
+.shoptext2 {
+    clear: both;
     color: rgb(12, 27, 12);
-    font-size: 20px;
+    width: 550px;
     text-align: center;
-    padding-top: 150px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    clear: both;
+}
+
+.product-item {
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-item img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.add-to-cart {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.add-to-cart:hover {
+    background-color: #333;
+}
+
+.product-container {
+    display: flex;
+    width: 905px;
+    margin: 40px auto;
+    background-color: white;
+    clear: both;
+}
+
+.product-info {
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    color: rgb(12, 27, 12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product-info h2 {
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    margin-top: 0px;
+}
+
+.lip-image {
+width: 50%;
+height: 400px;
+object-fit: contain;
+display: block;
+}
+
+.product-grid2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    clear: both;
+}
+
+.product-item2 {
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-item2 img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 30px;
 }
