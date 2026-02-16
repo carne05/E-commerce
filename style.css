@@ -21,24 +21,10 @@ text-align: left;
 position: relative;
 }
 
-@media screen (max-width: 600px) {
-    .homepage-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .header h1 {
-        font-size: 1.5rem;
-    }
-}
-
-@media screen (max-width: 600px) {
-    .product-details {
-        grid-template-columns: 1fr;
-    }
-
-    .header h1 {
-        font-size: 1.5rem;
-    }
+.home {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .shop {
@@ -59,18 +45,17 @@ vertical-align: middle;
 
 .member {
 font-size: 15px;
-margin-left: 100spx;
+margin-left: 25px;
 font-weight: medium;
 vertical-align: middle;
 }
 
-.cart {
-position: absolute;
-right: 30px;
-top: 40%;
-color:rgb(79, 123, 77);
-text-decoration: none;
-color: inherit;
+.cart-logo {
+max-width: 20px;
+max-height: 20px;
+vertical-align: middle;
+margin-left: 425px;
+font-size: 0px;
 }
 
 .header-picture {
@@ -351,4 +336,70 @@ display: block;
 
 .add-to-cart-large:hover {
     background-color: rgb(35, 55, 35);
+}
+
+/*Varukorg*/
+.cart-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.cart-img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    flex: none;
+}
+
+.cart-img img {
+width: 100%;
+max-width: 100px;
+height: auto;
+display: block;
+}
+
+.cart-left {
+    width: 60%;
+}
+
+.cart-right {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: beige;
+    padding: 15px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+
+
+.checkout-button {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.checkout-button:hover {
+background-color: rgb(35, 55, 35);
 }

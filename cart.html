@@ -8,16 +8,61 @@
 </head>
 <body>
     <header class="header">
-       <h1>AURÉA
+       <h1>
+            <a href="index.html" class="home">AURÉA</a>
            <a href="products.html" class="shop">Shop all</a>
            <span class="Gallery">Gallery</span>
            <span class="member">Membership</span> <!--span är som en osynlig låda för att gruppera texter-->
+             <a href="cart.html" class="cart-logo">
+            <img src="images/cart-logo.png" class="cart-logo" >
+           </a>
        </h1> <!--Var tvungen att ta reda på span cite:google gemini-->
         
-           <a href="cart.html" class="cart">Cart</a>
+
    </header>
 
+<main class="cart-main">
+    <div class="cart-left">
+        <h1 class="your-bag">Your Cart</h1>
+    
+    <!-- 
+    <div class="cart-labels">
+        <span>Products</span>
+        <span>Description</span>
+        <span>Quantity</span>
+        <span>Price</span>
+    </div>-->
+    <hr>
 
+    <div class="cart-item">
+        <img src="images/lipbalm-product.jpeg" class="cart-img">
+        <p>Buttergloss</p>
+        <p>- 1 +</p>
+        <p>199 SEK</p>
+        <span>&times;</span>
+    </div>
+    <hr>
+    </div>
+
+    <div class="cart-right">
+        <h3>Order summary</h3>
+    <div class="summary-line">
+        <span>1 Product:</span>
+        <span>199 SEK</span>
+    </div>
+    <div class="summary-line">
+        <span>Shippin:</span>
+        <span>49 SEK</span>
+    </div>
+
+    <div class="total-section">
+        <p>Total</p>
+        <p>248 SEK</p>
+    </div>
+
+        <button class="checkout-button">Checkout</button>
+    </div>
+</main>
 
 
 <footer>
