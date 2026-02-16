@@ -1,5 +1,5 @@
 body {
-background-color: beige;
+background-color: rgb(249, 249, 235);
 margin: 0;
 padding: 0;
 text-align: center;
@@ -19,6 +19,26 @@ box-sizing: border-box; /*cite: google gemini*/
 color: rgb(40, 71, 38);
 text-align: left;
 position: relative;
+}
+
+@media screen (max-width: 600px) {
+    .homepage-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen (max-width: 600px) {
+    .product-details {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
 }
 
 .shop {
@@ -175,11 +195,18 @@ padding-top: 30px;
     align-items: center;
 }
 
-.product-item img{
+.product-item img,
+.product-item2 img  {
     width: 100%;
     height: 500px;
     object-fit: cover;
     margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.product-item img:hover,
+.product-item2 img:hover {
+transform: scale(1.05);
 }
 
 .add-to-cart {
@@ -254,4 +281,74 @@ display: block;
     height: 500px;
     object-fit: cover;
     margin-bottom: 30px;
+}
+
+/*produktsidan*/
+.product-page {
+    display: flex;
+    max-width: 1000px;
+    margin:  55px;
+    padding: 10px;
+    gap: 20px;
+    text-align: left;
+}
+
+.product-image {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    min-width: 600px;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 700px;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 80px;
+}
+
+.product-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 150px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    color:rgb(12, 27, 12);
+    text-align: left;
+}
+
+.purchase {
+    width: 100%;
+    margin-top: 25px;
+    display: block;
+    clear: both;
+}
+
+.add-to-cart-large {
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgb(12, 27, 12);
+    color: white;
+    border: none;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart-large:hover {
+    background-color: rgb(35, 55, 35);
 }
