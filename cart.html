@@ -1,72 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart-AURÈA</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="Script.js"></script>
+  </head>
+  <body>
     <header class="header">
-       <h1>
-            <a href="index.html" class="home">AURÉA</a>
-           <a href="products.html" class="shop">Shop all</a>
-           <span class="Gallery">Gallery</span>
-           <span class="member">Membership</span> <!--span är som en osynlig låda för att gruppera texter-->
-             <a href="cart.html" class="cart-logo">
-            <img src="images/cart-logo.png" class="cart-logo" >
-           </a>
-       </h1> <!--Var tvungen att ta reda på span cite:google gemini-->
-        
+      <nav>
+        <a href="index.html" class="home">AURÉA</a>
+        <a href="products.html" class="shop">Shop all</a>
+        <a href="#" class="Gallery">Gallery</a>
+        <a href="#" class="member">Membership</a>
+        <!--span är som en osynlig låda för att gruppera texter-->
+        <a href="contact.html" class="contact">Contact</a>
+        <a href="cart.html" class="cart-logo">
+          <img src="images/cart-logo.png" class="cart-logo" />
+        </a>
+      </nav>
+      <!--Var tvungen att ta reda på span cite:google gemini-->
+    </header>
 
-   </header>
-
-<main class="cart-main">
-    <div class="cart-left">
+    <main class="cart-main">
+      <div class="cart-left">
         <h1 class="your-bag">Your Cart</h1>
-    
-    <!-- 
+
+        <!-- 
     <div class="cart-labels">
         <span>Products</span>
         <span>Description</span>
         <span>Quantity</span>
         <span>Price</span>
     </div>-->
-    <hr>
+        <hr />
 
-    <div class="cart-item">
-        <img src="images/lipbalm-product.jpeg" class="cart-img">
-        <p>Buttergloss</p>
-        <p>- 1 +</p>
-        <p>199 SEK</p>
-        <span>&times;</span>
-    </div>
-    <hr>
-    </div>
+        <div class="cart-item" id="product-row">
+          <img src="images/lipbalm-product.jpeg" class="cart-img" />
+          <p>Buttergloss</p>
 
-    <div class="cart-right">
+          <p>
+            <button onclick="changeQty(-1)" style="cursor: pointer">-</button>
+            <span id="quantity">1</span>
+            <button onclick="changeQty(1)" style="cursor: pointer">+</button>
+          </p>
+
+          <p>199 SEK</p>
+
+          <span onclick="removeProduct()" style="cursor: pointer">&times;</span>
+        </div>
+        <hr />
+      </div>
+
+      <div class="cart-right">
         <h3>Order summary</h3>
-    <div class="summary-line">
-        <span>1 Product:</span>
-        <span>199 SEK</span>
-    </div>
-    <div class="summary-line">
-        <span>Shippin:</span>
-        <span>49 SEK</span>
-    </div>
+        <div class="summary-line">
+          <span>1 Product:</span>
+          <span>199 SEK</span>
+        </div>
 
-    <div class="total-section">
-        <p>Total</p>
-        <p>248 SEK</p>
-    </div>
-
-        <button class="checkout-button">Checkout</button>
-    </div>
-</main>
+        <div class="total-section">
+          <p>Total</p>
+          <p><span id="total-price">199</span>SEK</p>
+        </div>
 
 
-<footer>
-   <p>&copy; AURÉA</p>
-</footer>
-</body>
+<a href="Checkout.html">
+<button class="checkout-button">Checkout</button>
+</a>
+        
+    </main>
+    <footer>
+      <p>&copy; AURÉA</p>
+    </footer>
+  </body>
 </html>
