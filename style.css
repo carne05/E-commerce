@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Corinthia&display=swap");
+
 body {
   background-color: rgb(249, 249, 235);
   margin: 0;
@@ -10,13 +12,13 @@ body {
 }
 
 .header {
-  background: rgb(254, 255, 216);
+  background: rgb(52, 74, 98);
   padding: 6px 70px;
   margin: 0;
   width: 100%;
   box-sizing: border-box; /*cite: google gemini*/
 
-  color: rgb(40, 71, 38);
+  color: rgb(251, 255, 184);
   text-align: left;
   position: relative;
 }
@@ -307,6 +309,41 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.img-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.product-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.img-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-item:hover .img-back {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.product-item:hover .img-front {
+  transform: scale(1.05);
 }
 
 .product-item img,
@@ -343,7 +380,7 @@ body {
   display: flex;
   width: 905px;
   margin: 40px auto;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   clear: both;
 }
 
@@ -404,10 +441,11 @@ body {
 }
 
 .product-image {
-  display: flex;
-  justify-content: flex-start;
+  display: block;
   flex: 1;
   min-width: 600px;
+  height: 600px;
+  position: relative;
 }
 
 .product-image img {
@@ -416,6 +454,30 @@ body {
   height: 600px;
   object-fit: cover;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition:
+    opacity 0.4s ease-in-out,
+    transform 0.4s ease-in-out;
+}
+
+.img-back1 {
+  z-index: 1;
+}
+
+.img-front1 {
+  z-index: 2;
+  opacity: 1;
+}
+
+.product-image:hover .img-front1 {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.product-image:hover .img-back1 {
+  transform: scale(1.02);
 }
 
 .product-details {
@@ -448,7 +510,7 @@ body {
 .add-to-cart-large {
   width: 100%;
   padding: 10px 0;
-  background-color: rgb(12, 27, 12);
+  background-color: rgb(52, 74, 98);
   color: white;
   border: none;
   font-size: 13px;
@@ -460,7 +522,27 @@ body {
 }
 
 .add-to-cart-large:hover {
-  background-color: rgb(35, 55, 35);
+  background-color: rgb(76, 104, 135);
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+  border-color: rgb(12, 27, 12);
 }
 
 /*Varukorg*/
@@ -534,35 +616,55 @@ body {
 }
 
 /*checkout*/
-.card {
-  background-color: white;
-  width: 700px;
-  padding: 30px;
-  margin: 0 auto;
-  border: 1px solid black;
+.checkout-section {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  background-color: rgb(249, 249, 235);
+  overflow: hidden;
 }
 
-.details {
-  font-size: 15px;
+.left-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  text-align: center;
 }
 
-.picture-checkout {
-  width: 200px;
+.purchase-titel {
+  font-size: 40px;
+  color: rgb(52, 74, 98);
+  line-height: 1.1;
+  margin: 20px 0;
 }
 
-.continue-shopping {
-  width: 50%;
-  background-color: black;
-  color: white;
-  margin-top: 50px;
-  padding: 15px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.purchase-text {
+  font-size: 14px;
+  color: rgb(52, 74, 98);
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
-.continue-shopping:hover {
-  background-color: rgb(35, 55, 35);
+.right-side {
+  flex: 1;
+}
+
+.checkout-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  color: rgb(52, 74, 98);
+  font-size: 13px;
+}
+
+.lipgloss-checkout {
+  width: 100px;
 }
 
 .last {
@@ -584,4 +686,53 @@ body {
   border-radius: 4px;
   max-width: 300px;
   display: block;
+}
+
+/*contactpage*/
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px auto;
+  max-width: 1000px;
+}
+
+.contact-text {
+  flex: 1;
+  font-size: 25px;
+  text-align: left;
+}
+
+.contact-picture {
+  max-width: 500px;
+  flex: 1;
+  height: auto;
+  object-fit: cover;
+}
+
+.contact-social {
+  flex: 1;
+  font-size: 25px;
+  text-align: left;
+  margin-bottom: -10px;
+}
+
+.Social-media {
+  flex: 1;
+  font-size: 15px;
+  text-align: left;
+}
+
+.mail-headline {
+  flex: 1;
+  font-size: 25px;
+  text-align: left;
+  margin-bottom: -10px;
+}
+
+.email {
+  flex: 1;
+  font-size: 15px;
+  text-align: left;
 }

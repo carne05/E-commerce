@@ -1,3 +1,4 @@
+//cite: https://www.youtube.com/watch?v=YeFzkC2awTM - jag tog inspiration från youtubevideon och fick lite hjälp av google gemini till vissa delar jag inte förstod mig på//
 function changeQty(change) {
   const qtyElement = document.getElementById("quantity");
   const priceElement = document.getElementById("total-price");
@@ -22,4 +23,9 @@ function removeProduct() {
   if (priceElement) {
     priceElement.innerText = "0";
   }
+}
+
+function changeImage(fileName) {
+  let mainImg = document.getElementById("main-Img");
+  mainImg.src = fileName;
 }
