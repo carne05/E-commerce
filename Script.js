@@ -29,3 +29,19 @@ function changeImage(fileName) {
   let mainImg = document.getElementById("main-Img");
   mainImg.src = fileName;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".add-to-cart-large");
+  const popup = document.getElementById("popupMessage");
+
+  if (!btn) console.log("Knappen hittades inte");
+  if (!popup) console.log("Popup hittades inte");
+
+  btn?.addEventListener("click", () => {
+    popup.style.display = "flex";
+
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 5000);
+  });
+});

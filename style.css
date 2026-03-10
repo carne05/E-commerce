@@ -34,108 +34,6 @@ body {
   padding: 15px;
 }
 
-/*breakpoing-mobil*/
-@media (max-width: 768px) {
-  .homepage.product-grid {
-    display: block;
-    padding: 10px;
-  }
-
-  .header nav {
-    flex-direction: column;
-    gap: 15px;
-    text-align: left;
-  }
-
-  a.cart-logo {
-    margin-left: 0;
-  }
-
-  a.shop {
-    margin-left: 0;
-  }
-
-  a.Gallery {
-    margin-left: 0;
-  }
-
-  a.member {
-    margin-left: 0;
-  }
-
-  a.contact {
-    margin-left: 0;
-  }
-
-  .header-picture,
-  .bestseller-picture,
-  .member-picture {
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-    margin-right: 0;
-    display: block;
-  }
-
-  .bild-ner {
-    margin-top: 0;
-  }
-
-  .about-text,
-  .bestseller-text,
-  .about {
-    padding: 0 15px;
-    text-align: center;
-  }
-
-  .member-frame {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  section.product-grid,
-  section.product-grid2 {
-    grid-template-columns: 1fr;
-  }
-
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 250px;
-    padding: 0 20px;
-  }
-
-  .product-page {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .product-title {
-    text-align: center;
-    margin-top: 30p;
-  }
-
-  .slogan {
-    text-align: center;
-  }
-
-  .product-description {
-    text-align: left;
-    padding: 0 10px;
-  }
-
-  .product-image img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .purchase {
-    margin-top: 40px;
-  }
-}
-
 .home {
   text-decoration: none;
   color: inherit;
@@ -149,7 +47,7 @@ body {
   font-weight: medium;
   vertical-align: middle;
   text-decoration: none;
-  color: inherit; /*var tvungen att ta reda på hur man fick bort strecket och fick samma färg cite:google gemini*/
+  color: inherit; /*had to google how to remove the line and change the color-cite:google gemini*/
 }
 
 .Gallery {
@@ -430,7 +328,7 @@ body {
   margin-bottom: 30px;
 }
 
-/*produktsidan*/
+/*{product site}*/
 .product-page {
   display: flex;
   max-width: 1000px;
@@ -488,6 +386,7 @@ body {
   text-align: left;
   padding-left: 0;
   margin-left: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .product-title {
@@ -545,7 +444,7 @@ body {
   border-color: rgb(12, 27, 12);
 }
 
-/*Varukorg*/
+/*Cart*/
 .cart-main {
   display: flex;
   justify-content: space-between;
@@ -613,6 +512,17 @@ body {
 
 .checkout-button:hover {
   background-color: rgb(35, 55, 35);
+}
+
+.ingredients {
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.shipping {
+  font-size: 14px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 /*checkout*/
@@ -735,4 +645,138 @@ body {
   flex: 1;
   font-size: 15px;
   text-align: left;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.popup-content {
+  background-color: rgb(205, 230, 196);
+  padding: 20px 40px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/*breakpoing-mobile*/
+@media screen and (max-width: 768px) {
+  .homepage.product-grid {
+    display: block;
+    padding: 10px;
+  }
+
+  .header nav {
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+  }
+
+  a.cart-logo {
+    margin-left: 0;
+  }
+
+  a.shop {
+    margin-left: 0;
+  }
+
+  a.Gallery {
+    margin-left: 0;
+  }
+
+  a.member {
+    margin-left: 0;
+  }
+
+  a.contact {
+    margin-left: 0;
+  }
+
+  .header-picture,
+  .bestseller-picture,
+  .member-picture {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+  }
+
+  .bild-ner {
+    margin-top: 0;
+  }
+
+  .about-text,
+  .bestseller-text,
+  .about {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .member-frame {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  section.product-grid,
+  section.product-grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 250px;
+    padding: 0 20px;
+  }
+
+  .product-page {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+    gap: 10px;
+  }
+
+  .product-title {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  .slogan {
+    text-align: center;
+  }
+
+  .product-description {
+    text-align: left;
+    padding: 0 10px;
+  }
+
+  .product-details {
+    flex: 1;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .product-image {
+    flex: 1;
+    min-width: 150px;
+    height: auto;
+  }
+
+  .product-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .purchase {
+    margin-top: 40px;
+  }
 }
