@@ -328,7 +328,7 @@ body {
   margin-bottom: 30px;
 }
 
-/*{product site}*/
+/*product site*/
 .product-page {
   display: flex;
   max-width: 1000px;
@@ -339,11 +339,10 @@ body {
 }
 
 .product-image {
-  display: block;
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
   min-width: 600px;
   height: 600px;
-  position: relative;
 }
 
 .product-image img {
@@ -352,9 +351,7 @@ body {
   height: 600px;
   object-fit: cover;
   display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-area: 1 / 1;
   transition:
     opacity 0.4s ease-in-out,
     transform 0.4s ease-in-out;
@@ -368,7 +365,7 @@ body {
   z-index: 2;
   opacity: 1;
 }
-
+/*Cite: google gemini följande två - ville veta hur man gjorde en hover*/
 .product-image:hover .img-front1 {
   opacity: 0;
   transform: scale(1.02);
@@ -664,6 +661,7 @@ body {
   text-align: center;
 }
 
+/*Cite: https://www.youtube.com/watch?v=yvqDrz2D_K8 samt hjälp från Lab och google gemini när koden inte fungerar*/
 /*breakpoing-mobile*/
 @media screen and (max-width: 768px) {
   .homepage.product-grid {
@@ -763,40 +761,6 @@ body {
     margin-left: 0;
     padding-left: 0;
   }
-  /*
-  .product-image {
-    flex: 1;
-    min-width: 150px;
-    height: auto;
-  }
-*/
-
-  .product-image {
-    display: grid;
-    grid-template-columns: 1fr;
-    min-width: 600px;
-    height: 600px;
-  }
-
-  .product-image img {
-    width: 100%;
-    max-width: 700px;
-    height: 600px;
-    object-fit: cover;
-    display: block;
-    grid-area: 1 / 1;
-    transition:
-      opacity 0.4s ease-in-out,
-      transform 0.4s ease-in-out;
-  }
-
-  /*
-  .product-image img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-    */
 
   .purchase {
     margin-top: 40px;
