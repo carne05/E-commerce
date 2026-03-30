@@ -1,47 +1,103 @@
-//cite: https://www.youtube.com/watch?v=YeFzkC2awTM - jag tog inspiration från youtubevideon och fick lite hjälp av google gemini till vissa delar jag inte förstod mig på//
-function changeQty(change) {
-  const qtyElement = document.getElementById("quantity");
-  const priceElement = document.getElementById("total-price");
+let cart = JSON.parse(localStorage.getItem("aurea_cart")) || [];
 
-  let currentQty = parseInt(qtyElement.innerText);
-  let newQty = currentQty + change;
+function saveCart() {
+  localStorage.setItem("aurea_cart", JSON.stringify(cart));
+}
 
-  if (newQty >= 1) {
-    qtyElement.innerText = newQty;
+function addToCart(name, price, image) {
+  let existingProduct = cart.find((item) => item.name === name);
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    cart.push({ name: name, price: price, image: image, quantity: 1 });
+  }
+  saveCart();
 
-    let newTotal = newQty * 199;
-    priceElement.innerText = newTotal;
+  const popup = document.getElementById("popupMessage");
+  if (popup) {
+    popup.style.display = "flex";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
   }
 }
 
-function removeProduct() {
-  const cartLeft = document.querySelector(".cart-left");
+function updateCartUI() {
+  const container = document.getElementById("cart-items-container");
+  const totalPriceElement = document.getElementById("total-price");
+  const itemCountElement = document.getElementById("item-count");
+  const summarySubtotal = document.getElementById("summary-subtotal");
 
-  cartLeft.innerHTML = '<h1 class="your-bag">Your cart is empty!</h1';
+  if (!container) return;
 
-  const priceElement = document.getElementById("total-price");
-  if (priceElement) {
-    priceElement.innerText = "0";
+  container.innerHTML = "";
+  let totalSum = 0;
+
+  if (cart.length === 0) {
+    container.innerHTML = '<h1 class="your-bag">Your cart is empty!</h1>';
+    if (totalPriceElement) totalPriceElement.innerText = "0";
+    if (itemCountElement) itemCountElement.innerText = "0 Products";
+    if (summarySubtotal) summarySubtotal.innerText = "0 SEK";
+    return;
   }
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    totalSum += itemTotal;
+    container.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" class="cart-img" />
+        <div class="item-info">
+          <p><strong>${item.name}</strong></p>
+          <p>${item.price} SEK</p>
+        </div>
+        <div class="item-qty">
+          <button onclick="changeQty(${index}, -1)" style="cursor: pointer">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="changeQty(${index}, 1)" style="cursor: pointer">+</button>
+        </div>
+        <p>${itemTotal} SEK</p>
+        <span onclick="removeProduct(${index})" style="cursor: pointer; font-size: 20px;">&times;</span>
+      </div>
+      <hr />
+    `;
+  });
+
+  if (totalPriceElement) totalPriceElement.innerText = totalSum;
+  if (summarySubtotal) summarySubtotal.innerText = totalSum + " SEK";
+  if (itemCountElement) itemCountElement.innerText = cart.length + "Products";
+}
+
+function changeQty(index, change) {
+  cart[index].quantity += change;
+  if (cart[index].quantity < 1) {
+    removeProduct(index);
+  } else {
+    saveCart();
+    updateCartUI();
+  }
+}
+
+function removeProduct(index) {
+  cart.splice(index, 1);
+  saveCart();
+  updateCartUI();
 }
 
 function changeImage(fileName) {
   let mainImg = document.getElementById("main-Img");
-  mainImg.src = fileName;
+  if (mainImg) mainImg.src = fileName;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".add-to-cart-large");
-  const popup = document.getElementById("popupMessage");
+function removeProduct(index) {
+  cart.splice(index, 1);
+  saveCart();
+  updateCartUI();
+}
 
-  if (!btn) console.log("Knappen hittades inte");
-  if (!popup) console.log("Popup hittades inte");
+function changeImage(fileName) {
+  let mainImg = document.getElementById("main-Img");
+  if (mainImg) mainImg.src = fileName;
+}
 
-  btn?.addEventListener("click", () => {
-    popup.style.display = "flex";
-
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 5000);
-  });
-});
+document.addEventListener("DOMContentLoaded", updateCartUI);

@@ -25,36 +25,20 @@
     <main class="cart-main">
       <div class="cart-left">
         <h1 class="your-bag">Your Cart</h1>
-
         <hr />
 
-        <div class="cart-item" id="product-row">
-          <img src="images/lipgloss1.png" class="cart-img" />
-          <p>Buttergloss</p>
-
-          <p>
-            <button onclick="changeQty(-1)" style="cursor: pointer">-</button>
-            <span id="quantity">1</span>
-            <button onclick="changeQty(1)" style="cursor: pointer">+</button>
-          </p>
-
-          <p>199 SEK</p>
-
-          <span onclick="removeProduct()" style="cursor: pointer">&times;</span>
-        </div>
-        <hr />
+        <div id="cart-items-container"></div>
       </div>
 
       <div class="cart-right">
         <h3>Order summary</h3>
         <div class="summary-line">
-          <span>1 Product:</span>
-          <span>199 SEK</span>
+          <span id="item-count">0 Product</span>
         </div>
 
         <div class="total-section">
           <p>Total</p>
-          <p><span id="total-price">199</span>SEK</p>
+          <p><span id="total-price">0</span>SEK</p>
         </div>
       </div>
 
