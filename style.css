@@ -2,9 +2,10 @@
 
 body {
   background-color: rgb(249, 249, 235);
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   text-align: center;
+  width: fit-content;
 
   border-bottom: 80px solid white;
   min-height: 100vh;
@@ -186,7 +187,6 @@ body {
 .shoptext2 {
   clear: both;
   color: rgb(12, 27, 12);
-  width: 550px;
   text-align: center;
   margin: 0 auto;
   margin-top: 10px;
@@ -276,7 +276,6 @@ body {
 
 .product-container {
   display: flex;
-  width: 905px;
   margin: 40px auto;
   background-color: rgb(255, 255, 255);
   clear: both;
@@ -341,7 +340,6 @@ body {
 .product-image {
   display: grid;
   grid-template-columns: 1fr;
-  min-width: 600px;
   height: 600px;
 }
 

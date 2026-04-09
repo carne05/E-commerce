@@ -1,3 +1,4 @@
+//cite: https://www.youtube.com/watch?v=UcrypywtAm0, and the videos Eveline shared on canvas, I also had support of google gemini.
 let cart = JSON.parse(localStorage.getItem("aurea_cart")) || [];
 
 function saveCart() {
